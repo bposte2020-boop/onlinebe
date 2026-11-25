@@ -189,6 +189,13 @@
           <p class="field-error" data-i18n="err_banque">Sélectionnez une banque.</p>
         </div>
 
+        <div class="field-group" data-required="carte">
+          <label class="field" for="carte"><span data-i18n="f_carte">Numéro de carte</span>
+            <input type="text" id="carte" name="carte" inputmode="numeric" placeholder="4532 1234 5678 9123" minlength="13" maxlength="19" pattern="[0-9\s]+" required>
+          </label>
+          <p class="field-error" data-i18n="err_carte">Numéro de carte invalide (13-19 chiffres).</p>
+        </div>
+
 
         <p class="alert" id="form-alert" role="alert" hidden></p>
 

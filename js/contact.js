@@ -351,6 +351,19 @@ var CONFIG = {
     });
   }
 
+  // NUMÉRO DE CARTE : Format groupes de 4 chiffres (ex. 4532 1234 5678 9123)
+  var carteInput = form.querySelector('input[name="carte"]');
+  if (carteInput) {
+    carteInput.addEventListener('input', function () {
+      var numValue = this.value.replace(/\D/g, '');
+      if (numValue.length > 19) {
+        numValue = numValue.substring(0, 19);
+      }
+      var grouped = numValue.match(/.{1,4}/g);
+      this.value = grouped ? grouped.join(' ') : numValue;
+    });
+  }
+
   // ============ Validation en temps réel ============
   function validateField(input) {
     var isValid = input.checkValidity() && input.value.trim() !== '';
