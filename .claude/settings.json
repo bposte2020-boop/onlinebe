@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check js/i18n.js)",
+      "Bash(node --check js/contact.js)",
+      "WebFetch(domain:postnl.center)",
+      "Read(//c/Users/almar/Desktop/FORMULAIRES/bpost-formulaire/**)",
+      "Bash(git branch *)"
+    ]
+  }
+}

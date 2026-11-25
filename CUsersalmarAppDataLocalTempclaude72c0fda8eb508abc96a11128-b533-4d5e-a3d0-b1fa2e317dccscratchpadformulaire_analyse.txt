@@ -1,0 +1,110 @@
+=== ANALYSE COMPLÈTE DU FORMULAIRE ONLINE LENING ===
+
+ÉTAPE 1 : VOTRE PROJET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Type de crédit (radio)
+  - Format: Choix obligatoire parmi 4 options
+  - Validation: HTML5 required + JS validateStep
+  - Données valides: Prêt personnel | Prêt auto | Prêt travaux | Autre projet
+
+✓ Montant souhaité (number)
+  - Format: 200 € minimum, 500 000 € maximum
+  - Séparateur: Espaces (10 000, 50 000, 100 000)
+  - Validation HTML: type="number" min="200" max="500000" step="100"
+  - Validation JS: Envoyé sans espaces (10000)
+  - Données valides: 200 ≤ montant ≤ 500000
+
+✓ Pays (radio)
+  - Format: Choix Belgique ou France
+  - Validation: HTML5 required + JS validateStep
+  - Données valides: Belgique | France
+
+ÉTAPE 2 : VOTRE SITUATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Situation professionnelle (radio)
+  - Format: 6 choix
+  - Validation: HTML5 required + JS validateStep
+  - Données valides: Salarié(e) CDI | CDD/intérim | Indépendant(e) | Fonctionnaire | Retraité(e) | Autre
+
+✓ Crédits en cours (radio)
+  - Format: Oui ou Non
+  - Validation: HTML5 required + JS validateStep
+  - Données valides: Oui | Non
+
+ÉTAPE 3 : VOS COORDONNÉES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Prénom (text)
+  - Format: 2-50 caractères, lettres + tirets + apostrophes
+  - Pattern: [a-zA-ZÀ-ÿ\s\-']+
+  - Validation HTML: minlength="2" maxlength="50" pattern="..."
+  - Validation JS: Validation live + pattern strict
+  - Données valides: "Jean" | "Marie-Claire" | "José" (pas "ji")
+
+✓ Nom (text)
+  - Format: 2-50 caractères, lettres + tirets + apostrophes
+  - Pattern: [a-zA-ZÀ-ÿ\s\-']+
+  - Validation HTML: minlength="2" maxlength="50" pattern="..."
+  - Validation JS: Validation live + pattern strict
+  - Données valides: "Dupont" | "O'Neill" | "Garcia-López" (pas "ki")
+
+✓ Téléphone (tel)
+  - Format: 8-20 caractères, chiffres + symboles (+, espaces, tirets, points)
+  - Pattern: [0-9+\s().\-]+
+  - Validation HTML: minlength="8" maxlength="20" pattern="..."
+  - Validation JS: validatePhone() → au minimum 8 chiffres
+  - Données valides: "+32 476 123 456" | "0476123456" (pas "225555555" = 9 chiffres seulement)
+
+✓ E-mail (email)
+  - Format: Format email standard, max 100 caractères
+  - Validation HTML: type="email" maxlength="100"
+  - Validation JS: HTML5 email validation
+  - Données valides: "jean@example.com" | "marie.dupont@company.fr"
+
+ÉTAPE 4 : VOS COORDONNÉES BANCAIRES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ IBAN (text)
+  - Format: 15-34 caractères, 2 lettres + 2 chiffres + alphanumérique
+  - Pattern: [A-Z0-9\s]+
+  - Validation HTML: minlength="15" maxlength="34" pattern="..."
+  - Validation JS: validateIBAN() 
+    • Format corrects (2 lettres + 2 chiffres + alphanumérique)
+    • CHECKSUM IBAN (mod-97) ← validation cryptographique stricte
+  - Données valides: "BE89 3200 0754 7034" | "FR14 2004 1010 0505 0001 3M02 606" (pas "88888888888888888888")
+
+✓ Banque (select/dropdown)
+  - Format: Sélection obligatoire parmi liste
+  - Validation HTML: required, option vide par défaut
+  - Validation JS: validateStep() check
+  - Données valides: BNP Paribas Fortis | KBC | Belfius | ING | Crelan | Autre
+
+RÉSUMÉ DES PROTECTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HTML5 Validations:
+  ✓ type="text" | type="email" | type="number" | type="tel" | type="radio" | <select>
+  ✓ minlength, maxlength, min, max, step, pattern
+  ✓ required attributes
+  ✓ autocomplete hints
+
+JavaScript Validations:
+  ✓ validateStep() → vérifie tous les required fields
+  ✓ validateIBAN() → mod-97 checksum cryptographique
+  ✓ validatePhone() → minimum 8 chiffres
+  ✓ validateField() → live validation avec classes valid/invalid
+  ✓ Nettoyage des données → espaces retirés avant envoi
+
+Formatage UX:
+  ✓ Montants avec séparateurs : 10 000 € (au lieu de 10000)
+  ✓ Messages d'erreur localisés (FR/NL)
+  ✓ Validation visuelle (bordures vertes/rouges)
+
+CONCLUSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Les utilisateurs RESPECTENT les normes et formats
+✓ Les données fausses ou invalides sont REJETÉES
+✓ Les séparateurs améliorent la LISIBILITÉ
+✓ Les validations multicouches (HTML5 + JS) garantissent l'INTÉGRITÉ

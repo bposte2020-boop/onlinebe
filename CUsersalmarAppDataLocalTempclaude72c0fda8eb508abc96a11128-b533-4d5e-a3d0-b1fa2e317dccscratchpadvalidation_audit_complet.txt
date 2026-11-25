@@ -1,0 +1,70 @@
+=== AUDIT COMPLET DES VALIDATIONS ===
+
+PROBLÈME IDENTIFIÉ:
+❌ Téléphone: "333333333333333333333" (23 chiffres) accepté
+✓ Devrait être rejeté (maxlength="20")
+
+ANALYSE PAR CHAMP:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ÉTAPE 3 - Prénom
+HTML:    <input type="text" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ\s\-']+" required>
+Validé:  ✓ HTML5 OK
+Problem: Accepte "king" (4 caractères, valide)
+         Accepte "ki" (2 caractères = minimum)
+         ✓ Pattern correct (lettres + tirets + apostrophes)
+JS:      ✓ validateField() en temps réel
+Issue:   Pas de blocage réel de la saisie
+
+Étape 3 - Nom  
+HTML:    <input type="text" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ\s\-']+" required>
+Validé:  ✓ HTML5 OK
+Problem: Accepte "von" (3 caractères, valide)
+         ✓ Pattern correct
+JS:      ✓ validateField() en temps réel
+Issue:   Pas de blocage réel de la saisie
+
+Étape 3 - Téléphone
+HTML:    <input type="tel" minlength="8" maxlength="20" pattern="[0-9+\s().\-]+" required>
+Validé:  ❌ HTML5 NE BLOQUE PAS
+Problem: Accepte "333333333333333333333" (23 chiffres)
+         ❌ maxlength="20" ne fonctionne pas sur type="tel"
+         ✓ Pattern correct (chiffres + symboles)
+JS:      ✓ validatePhone() vérifie min 8 chiffres
+         ❌ Pas de vrai blocage à la saisie
+
+Étape 3 - Email
+HTML:    <input type="email" maxlength="100" required>
+Validé:  ✓ HTML5 email validation OK
+         ✓ maxlength OK
+JS:      ✓ HTML5 email validation
+
+Étape 1 - Montant
+HTML:    <input type="text" inputmode="numeric" pattern="[0-9\s]+" required>
+Validé:  ⚠️ Pas de min/max HTML5
+JS:      ✓ Validation au submit (min 200, max 500000)
+         ✓ Formatage avec espaces
+Issue:   Pas de blocage réel de la saisie (accepte n'importe quel nombre)
+
+Étape 4 - IBAN
+HTML:    <input type="text" minlength="15" maxlength="34" pattern="[A-Z0-9\s]+" required>
+Validé:  ⚠️ maxlength peut être dépassé
+JS:      ✓ validateIBAN() avec checksum
+         ❌ Pas de blocage réel de la saisie
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RACINE DU PROBLÈME:
+HTML5 attributes (minlength, maxlength, pattern) NE BLOQUENT PAS réellement la saisie.
+Ils alertent simplement lors du submit que la saisie est invalide.
+L'utilisateur PEUT SAISIR n'importe quoi, mais le formulaire refusera de soumettre.
+
+SOLUTION REQUISE:
+Ajouter du JavaScript pour BLOQUER RÉELLEMENT la saisie (input event listener)
+avec rejection/sanitization des caractères invalides.
+
+CHAMPS À PROTÉGER:
+1. Prénom/Nom: bloquer les chiffres, caractères spéciaux (sauf tirets/apostrophes)
+2. Téléphone: limiter strictement à 20 caractères, bloquer les lettres
+3. Montant: bloquer les lettres, limiter à 6 chiffres (500000)
+4. IBAN: majuscules + chiffres + espaces, limiter à 34 caractères

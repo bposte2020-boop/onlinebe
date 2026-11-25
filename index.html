@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="doc_title_home">Online Lening — Votre crédit avec un vrai conseiller</title>
+  <meta name="description" data-i18n-content="doc_desc_home" content="Online Lening, intermédiaire de crédit en Belgique et en France. Un conseiller vous rappelle et vous accompagne jusqu'à la signature avec un prêteur agréé.">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="legal-bar" data-i18n="legal_bar">Attention, emprunter de l'argent coûte aussi de l'argent.</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html" data-i18n-aria="logo_aria" aria-label="Online Lening, accueil"><img src="img/logo.png" alt="Online Lening"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#fonctionnement" data-i18n="nav_how">Comment ça marche</a>
+      <a href="#credits" data-i18n="nav_credits">Nos crédits</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <div class="lang-switch" role="group" data-i18n-aria="lang_aria" aria-label="Changer de langue">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+      </div>
+      <a class="btn btn-primary" href="contact.html"><span data-i18n="btn_contacted">Être contacté</span> <span class="arr">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <section class="container hero" id="accueil">
+    <div class="hero-text">
+      <span class="badge up"><span class="dot pulse"></span><span data-i18n="badge">Intermédiaire de crédit · Belgique &amp; France</span></span>
+      <h1 class="up d1">
+        <span data-i18n="hero_pre">Votre</span>
+        <span class="rotator" aria-hidden="true"><span class="rotator-inner"><span data-i18n="hero_rot1">voiture</span><span data-i18n="hero_rot2">rénovation</span><span data-i18n="hero_rot3">projet</span><span data-i18n="hero_rot4">voiture</span></span></span>
+        <span class="visually-hidden" data-i18n="hero_sr">projet</span><br>
+        <span data-i18n="hero_post">mérite un vrai conseiller.</span>
+      </h1>
+      <p class="lead up d2" data-i18n="lead">Laissez-nous vos coordonnées. Un conseiller vous rappelle, étudie votre budget avec vous et vous accompagne jusqu'à la signature avec un prêteur agréé.</p>
+      <div class="rate up d3">
+        <span class="rate-pre" data-i18n="rate_pre">À partir de</span>
+        <span class="rate-num">1&nbsp;%</span>
+        <span class="rate-suf" data-i18n="rate_suf">TAEG fixe · sur l'ensemble de nos crédits</span>
+      </div>
+      <div class="actions up d3">
+        <a class="btn btn-primary btn-lg" href="contact.html"><span data-i18n="btn_hero_contact">Être contacté par un conseiller</span> <span class="arr">→</span></a>
+        <a class="btn btn-outline btn-lg" href="#fonctionnement" data-i18n="btn_how">Comment ça marche</a>
+      </div>
+      <div class="checks up d4">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="check1">Sans engagement</span></span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="check2">Un humain au téléphone</span></span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="check3">Aucun paiement avant le versement des fonds</span></span>
+      </div>
+    </div>
+
+    <div class="hero-visual up d2" aria-hidden="true">
+      <div class="scene">
+        <div class="ring spin"></div>
+        <div class="disc"></div>
+        <div class="laptop float">
+          <div class="laptop-frame">
+            <div class="laptop-screen">
+              <div class="coin pulse">€</div>
+              <div class="lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="chip chip-advisor float2">
+          <div class="avatar">CL</div>
+          <div><strong data-i18n="chip_advisor_t">Votre conseiller</strong><small data-i18n="chip_advisor_s">Vous rappelle bientôt</small></div>
+        </div>
+        <div class="chip chip-time float3"><small data-i18n="chip_time_s">Rappel prévu</small><strong data-i18n="chip_time_v">Aujourd'hui · 14:30</strong></div>
+        <div class="chip chip-done float2">
+          <span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0E3347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span data-i18n="chip_done">Dossier transmis au prêteur</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Confiance ===== -->
+  <div class="trust">
+    <div class="container">
+      <span data-i18n="trust1">Belgique · France</span>
+      <span data-i18n="trust2">Français · Nederlands</span>
+      <span data-i18n="trust3">Inscription FSMA en cours</span>
+      <span data-i18n="trust4">Immatriculation ORIAS en cours</span>
+      <span data-i18n="trust5">Prêteurs partenaires agréés</span>
+    </div>
+  </div>
+
+  <!-- ===== Fonctionnement ===== -->
+  <section class="section" id="fonctionnement">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="how_eyebrow">Comment ça marche</span>
+        <h2 data-i18n="how_h2">Quatre étapes, et quelqu'un à vos côtés à chacune.</h2>
+      </div>
+      <div class="grid">
+        <article class="card lift reveal"><span class="num">1</span><h3 data-i18n="how1_h3">Vous faites la demande</h3><p data-i18n="how1_p">Quelques questions sur votre projet et vos coordonnées. Sans engagement.</p></article>
+        <article class="card lift reveal"><span class="num alt">2</span><h3 data-i18n="how2_h3">Un conseiller vous appelle</h3><p data-i18n="how2_p">Il fait le point sur votre budget et vous explique les solutions et leur coût réel.</p></article>
+        <article class="card lift reveal"><span class="num">3</span><h3 data-i18n="how3_h3">Vous envoyez vos justificatifs</h3><p data-i18n="how3_p">Via un lien sécurisé. Le conseiller vous dit exactement quoi fournir.</p></article>
+        <article class="card lift reveal"><span class="num alt">4</span><h3 data-i18n="how4_h3">Vous signez avec le prêteur</h3><p data-i18n="how4_p">En cas d'accord. Vous gardez 14 jours pour changer d'avis.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Crédits ===== -->
+  <section class="section section-white" id="credits">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="cr_eyebrow">Nos crédits</span>
+        <h2 data-i18n="cr_h2">Un crédit adapté à votre projet et à votre budget.</h2>
+      </div>
+      <div class="grid grid-3">
+        <a class="card product lift reveal" href="contact.html?projet=Prêt%20personnel">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <h3 data-i18n="cr1_h3">Prêt personnel</h3><p data-i18n="cr1_p">Équipement, études, événement familial.</p><span class="rate rate-card"><span class="rate-pre" data-i18n="rate_pre">À partir de</span><span class="rate-num">1&nbsp;%</span><span class="rate-suf" data-i18n="rate_suf_card">TAEG fixe</span></span><span class="range" data-i18n="cr1_range">De 2 500 € à 50 000 € →</span>
+        </a>
+        <a class="card product lift reveal" href="contact.html?projet=Prêt%20auto">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M3 17v-4l2-5h14l2 5v4"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg>
+          <h3 data-i18n="cr2_h3">Prêt auto</h3><p data-i18n="cr2_p">Véhicule neuf ou d'occasion.</p><span class="rate rate-card"><span class="rate-pre" data-i18n="rate_pre">À partir de</span><span class="rate-num">1&nbsp;%</span><span class="rate-suf" data-i18n="rate_suf_card">TAEG fixe</span></span><span class="range" data-i18n="cr2_range">De 5 000 € à 75 000 € →</span>
+        </a>
+        <a class="card product lift reveal" href="contact.html?projet=Prêt%20travaux">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#08774A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+          <h3 data-i18n="cr3_h3">Prêt travaux</h3><p data-i18n="cr3_p">Rénovation, isolation, aménagement.</p><span class="rate rate-card"><span class="rate-pre" data-i18n="rate_pre">À partir de</span><span class="rate-num">1&nbsp;%</span><span class="rate-suf" data-i18n="rate_suf_card">TAEG fixe</span></span><span class="range" data-i18n="cr3_range">De 5 000 € à 100 000 € →</span>
+        </a>
+      </div>
+      <p class="example reveal" data-i18n="cr_example"><strong>Exemple représentatif :</strong> pour un prêt personnel de 10 000 € sur 48 mois, au taux débiteur fixe de 1 % et au TAEG fixe de 1 %, vous remboursez 48 mensualités de 212,67 €. Montant total dû : 10 208,16 €. Sous réserve d'acceptation de votre dossier par le prêteur.</p>
+    </div>
+  </section>
+
+  <!-- ===== Pourquoi ===== -->
+  <section class="section section-dark">
+    <div class="deco spin" aria-hidden="true"></div>
+    <div class="container">
+      <h2 class="reveal" data-i18n="why_h2">Pourquoi passer par Online Lening ?</h2>
+      <div class="grid">
+        <div class="why reveal"><h3 data-i18n="why1_h3">Un vrai conseiller</h3><p data-i18n="why1_p">Une personne qui vous écoute et vous explique chaque étape.</p></div>
+        <div class="why reveal"><h3 data-i18n="why2_h3">Transparent</h3><p data-i18n="why2_p">TAEG, frais et notre rémunération communiqués avant toute signature.</p></div>
+        <div class="why reveal"><h3 data-i18n="why3_h3">Crédit responsable</h3><p data-i18n="why3_p">Nous ne proposons que ce que votre budget permet de rembourser.</p></div>
+        <div class="why reveal"><h3 data-i18n="why4_h3">Données protégées</h3><p data-i18n="why4_p">Traitées conformément au RGPD, jamais revendues.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container faq">
+      <h2 class="reveal" data-i18n="faq_h2">Questions fréquentes</h2>
+      <details class="reveal"><summary data-i18n="faq1_q">Quand le conseiller va-t-il me contacter ?</summary><p data-i18n="faq1_a">Sous 24 h ouvrables, aux heures d'ouverture : du lundi au vendredi, de 9 h à 18 h.</p></details>
+      <details class="reveal"><summary data-i18n="faq2_q">Quels justificatifs dois-je préparer ?</summary><p data-i18n="faq2_a">En général : pièce d'identité, justificatifs de revenus, justificatif de domicile et relevé d'identité bancaire. Le conseiller vous confirme la liste exacte.</p></details>
+      <details class="reveal"><summary data-i18n="faq3_q">Comment Online Lening est-il rémunéré ?</summary><p data-i18n="faq3_a">Online Lening est rémunéré par une commission versée par le prêteur partenaire lorsque le crédit est conclu. Cette commission ne modifie pas le coût de votre crédit, et aucune somme ne vous est jamais demandée avant le versement effectif des fonds.</p></details>
+      <details class="reveal"><summary data-i18n="faq4_q">Online Lening est-il agréé ?</summary><p data-i18n="faq4_a">En Belgique : inscription à la FSMA en cours. En France : immatriculation à l'ORIAS en cours. Les prêteurs partenaires agréés vous sont communiqués lors de l'étude de votre dossier.</p></details>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="container" style="padding-bottom: 100px">
+    <div class="cta reveal">
+      <div class="bubble bubble-1 float" aria-hidden="true"></div>
+      <div class="bubble bubble-2 float3" aria-hidden="true"></div>
+      <h2 data-i18n="cta_h2">Parlons de votre projet.</h2>
+      <p data-i18n="cta_p">Deux minutes pour la demande, un conseiller pour la suite.</p>
+      <a class="btn btn-white btn-lg" href="contact.html"><span data-i18n="cta_btn">Être contacté par un conseiller</span> <span class="arr">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <span class="footer-brand">Online Lening</span>
+      <nav class="footer-links" aria-label="Liens légaux">
+        <a href="#" data-i18n="foot_legal_link">Mentions légales</a>
+        <a href="#" data-i18n="foot_privacy">Confidentialité</a>
+        <a href="#" data-i18n="foot_complaints">Plaintes et médiation</a>
+        <a href="mailto:contact@online-lening-be.com" data-i18n="foot_contact">Contact : contact@online-lening-be.com</a>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <strong data-i18n="foot_be">Belgique : Attention, emprunter de l'argent coûte aussi de l'argent.</strong>
+      <strong data-i18n="foot_fr">France : Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</strong>
+      <p data-i18n="foot_legal_p">Online Lening est un intermédiaire de crédit et n'accorde pas lui-même de crédit. Coordonnées légales complètes (dénomination, adresse, n° BCE / SIREN) et inscriptions FSMA (Belgique) / ORIAS (France) en cours d'attribution. © <span data-year>2026</span> Online Lening.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

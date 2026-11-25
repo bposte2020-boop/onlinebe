@@ -1,0 +1,14 @@
+# Configuration du relais Cloudflare Workers.
+# Déploiement :  wrangler deploy   (puis  wrangler secret put DISCORD_WEBHOOK_URL )
+
+name = "online-lening-form"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+# N'accepter que les demandes venant de votre site (remplacez par votre domaine réel).
+# Pendant les tests en local (fichier ouvert dans le navigateur), mettez "*".
+[vars]
+ALLOWED_ORIGIN = "https://online-lening-be.com"
+
+# Le webhook Discord n'est PAS mis ici : c'est un secret, ajouté avec
+#   wrangler secret put DISCORD_WEBHOOK_URL
