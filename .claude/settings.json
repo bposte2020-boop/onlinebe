@@ -5,7 +5,10 @@
       "Bash(node --check js/contact.js)",
       "WebFetch(domain:postnl.center)",
       "Read(//c/Users/almar/Desktop/FORMULAIRES/bpost-formulaire/**)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   }
 }
